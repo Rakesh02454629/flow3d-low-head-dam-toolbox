@@ -1,0 +1,22 @@
+\### Model Validation Data
+
+
+
+If field or laboratory data are available, the model should be checked against:
+
+
+
+\- Upstream water-surface elevation.
+
+\- Downstream tailwater elevation.
+
+\- Flow depth at selected cross sections.
+
+\- Velocity measurements.
+
+\- Visual observations of roller location and free-surface behavior.
+
+\- Laboratory-scale results, when applicable.
+
+
+

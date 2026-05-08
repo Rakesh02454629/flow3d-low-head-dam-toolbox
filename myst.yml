@@ -1,0 +1,21 @@
+version: 1
+project:
+  title: FLOW-3D CFD Toolbox for Low-Head Dam Hazard Analysis
+  authors:
+    - name: Rakesh Kumar Chaudhary
+  toc:
+    - file: intro.md
+    - file: 01_tool_summary.md
+    - file: 02_what_is_needed.md
+    - file: 03_folder_organization.md
+    - file: 03_Recommended_naming_practice.md
+    - file: 04_data_model_setup.md
+    - file: 05_validation.md
+    - file: 06_summary_results.md
+    - file: 05_flow3d_walkthrough.md
+    - file: 06_downloadable_files.md
+    - file: 08_toolbox_learning_sequences.md
+    - file: 09_version_information.md
+
+site:
+  template: book-theme

@@ -1,0 +1,368 @@
+\## 5. Step-by-Step Walkthrough in FLOW-3D
+
+
+
+\### Step 1: Create a New Simulation
+
+
+
+\*\*Purpose:\*\* Start a new FLOW-3D HYDRO simulation using the correct unit system and project name.
+
+
+
+\*\*Action:\*\*
+
+
+
+1\. Open FLOW-3D HYDRO.
+
+2\. Create a new workspace or project.
+
+3\. Select the correct unit system.
+
+4\. Save the simulation using a clear name, such as `LHD\_reverse\_roller\_training\_case`.
+
+
+
+\*\*Expected outcome:\*\* A new FLOW-3D simulation is created and ready for geometry import.
+
+
+
+\---
+
+
+
+\### Step 2: Import Geometry
+
+
+
+\*\*Purpose:\*\* Load the low-head dam and channel geometry into the FLOW-3D model.
+
+
+
+\*\*Action:\*\*
+
+
+
+1\. Import the structure geometry file from the `02\_Geometry` folder.
+
+2\. Check the model scale.
+
+3\. Check the model orientation.
+
+4\. Confirm that the dam, crest, apron, and downstream channel are positioned correctly.
+
+
+
+\*\*Expected outcome:\*\* The hydraulic-structure geometry appears correctly within the computational domain.
+
+
+
+\[View Figure 3: Geometry imported into FLOW-3D](02\_geometry\_import.png)
+
+
+
+\*\*Figure 3.\*\* Geometry imported into FLOW-3D.
+
+
+
+\---
+
+
+
+\### Step 3: Define the Computational Domain
+
+
+
+\*\*Purpose:\*\* Create a model domain that includes the upstream approach, dam crest, downstream apron, reverse-roller zone, and downstream recovery reach.
+
+
+
+\*\*Action:\*\*
+
+
+
+1\. Define the upstream and downstream domain limits.
+
+2\. Set the domain width to include the full channel or modeled section.
+
+3\. Set the vertical extent high enough to contain the expected water surface.
+
+4\. Leave sufficient downstream distance to capture the reverse roller and flow recovery.
+
+
+
+\*\*Expected outcome:\*\* The computational domain fully contains the hydraulic features of interest.
+
+
+
+\---
+
+
+
+\### Step 4: Generate the Mesh
+
+
+
+\*\*Purpose:\*\* Create a computational mesh that captures key hydraulic behavior while maintaining reasonable computation time.
+
+
+
+\*\*Action:\*\*
+
+
+
+1\. Create a mesh block covering the full computational domain.
+
+2\. Refine the mesh near the dam crest, toe, apron, and roller region.
+
+3\. Check the number of cells and expected runtime.
+
+4\. Adjust mesh resolution if important features are not well represented.
+
+
+
+\*\*Expected outcome:\*\* The mesh is sufficiently refined near the low-head dam and reverse-roller region.
+
+
+
+\[View Figure 4: Mesh setup and refinement near the hydraulic structure](03\_mesh\_setup.png)
+
+
+
+\*\*Figure 4.\*\* Mesh setup and refinement near the hydraulic structure.
+
+
+
+\---
+
+
+
+\### Step 5: Select Physics Options
+
+
+
+\*\*Purpose:\*\* Activate the physics models needed for free-surface hydraulic simulation.
+
+
+
+\*\*Action:\*\*
+
+
+
+1\. Activate gravity.
+
+2\. Activate free-surface flow.
+
+3\. Select the appropriate turbulence model.
+
+4\. Activate air entrainment if required for the simulation purpose.
+
+5\. Activate the general moving-object model if a floating body is included.
+
+
+
+\*\*Expected outcome:\*\* The simulation physics are appropriate for low-head dam free-surface flow and reverse-roller analysis.
+
+
+
+\---
+
+
+
+\### Step 6: Apply Boundary Conditions
+
+
+
+\*\*Purpose:\*\* Define the upstream inflow and downstream hydraulic control.
+
+
+
+\*\*Action:\*\*
+
+
+
+1\. Assign the upstream inflow boundary using discharge, velocity, or pressure conditions.
+
+2\. Assign the downstream boundary using tailwater elevation, pressure, or rating-curve information.
+
+3\. Assign wall boundaries to the channel bed and structure.
+
+4\. Assign side-wall or symmetry boundaries as appropriate.
+
+5\. Confirm that the top boundary allows free-surface behavior.
+
+
+
+\*\*Expected outcome:\*\* All boundary conditions are assigned and consistent with the site or laboratory conditions.
+
+
+
+\---
+
+
+
+\### Step 7: Set Initial Conditions
+
+
+
+\*\*Purpose:\*\* Define initial water levels and flow conditions to improve model stability.
+
+
+
+\*\*Action:\*\*
+
+
+
+1\. Set the initial water level upstream and downstream.
+
+2\. Define initial fluid regions.
+
+3\. Check whether the initial water surface is reasonable.
+
+4\. Avoid unrealistic dry or overfilled regions unless intentionally modeled.
+
+
+
+\*\*Expected outcome:\*\* The model begins from a stable and physically reasonable initial condition.
+
+
+
+\---
+
+
+
+\### Step 8: Set Simulation Control
+
+
+
+\*\*Purpose:\*\* Set runtime, output intervals, and numerical controls.
+
+
+
+\*\*Action:\*\*
+
+
+
+1\. Define total simulation time.
+
+2\. Define output-save intervals.
+
+3\. Enable restart files if needed.
+
+4\. Review stability controls and solver settings.
+
+5\. Set monitoring points or output locations if needed.
+
+
+
+\*\*Expected outcome:\*\* The simulation control settings are ready for running the model.
+
+
+
+\---
+
+
+
+\### Step 9: Run the Simulation
+
+
+
+\*\*Purpose:\*\* Run the model and monitor stability.
+
+
+
+\*\*Action:\*\*
+
+
+
+1\. Run the preprocessor.
+
+2\. Check for warnings or errors.
+
+3\. Start the simulation.
+
+4\. Monitor time step, volume error, and free-surface behavior.
+
+5\. Stop and troubleshoot if the model becomes unstable.
+
+
+
+\*\*Expected outcome:\*\* The model runs successfully and produces output files for post-processing.
+
+
+
+\---
+
+
+
+\### Step 10: Post-Process Results
+
+
+
+\*\*Purpose:\*\* Use FLOW-3D POST to visualize and extract hydraulic results.
+
+
+
+\*\*Action:\*\*
+
+
+
+1\. Open the completed simulation in FLOW-3D POST.
+
+2\. Create longitudinal and cross-section slices.
+
+3\. Plot velocity contours.
+
+4\. Plot water-surface elevation.
+
+5\. Extract pressure, turbulence, and vorticity results.
+
+6\. Generate figures and animations.
+
+
+
+\*\*Expected outcome:\*\* Hydraulic results are available for interpretation and reporting.
+
+
+
+\---
+
+
+
+\### Step 11: Interpret Hydraulic Hazard Conditions
+
+
+
+\*\*Purpose:\*\* Use model outputs to assess reverse-roller formation and drowning potential.
+
+
+
+\*\*Action:\*\*
+
+
+
+1\. Identify whether a reverse roller forms downstream of the dam.
+
+2\. Locate the recirculation zone and surface return flow.
+
+3\. Identify high-velocity regions.
+
+4\. Compare modeled water levels with observed or expected values.
+
+5\. Evaluate whether structural modifications reduce hazardous hydraulic behavior.
+
+6\. Summarize results by flow range and probability of exceedance, when applicable.
+
+
+
+\*\*Expected outcome:\*\* The user can interpret whether the modeled flow condition may indicate hazardous reverse-roller behavior.
+
+
+
+\---
+
+
+
+
+
