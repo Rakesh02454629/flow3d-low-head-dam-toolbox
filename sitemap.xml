@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="http://localhost:3000/sitemap_style.xsl" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>http://localhost:3000</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/tool-summary</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/what-is-needed</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/folder-organization</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/recommended-naming-practice</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/data-model-setup</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/validation</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/summary-results</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/flow3d-walkthrough</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/downloadable-files</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/toolbox-learning-sequences</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/version-information</loc>
+  </url>
+</urlset>
