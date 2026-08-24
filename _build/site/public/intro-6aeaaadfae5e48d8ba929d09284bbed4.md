@@ -1,0 +1,121 @@
+<h1>FLOW-3D CFD Toolbox for Low-Head Dam Hazard Analysis</h1>
+
+<h2>Introduction</h2>
+
+<p>
+There are thousands of low-head dams, generally defined as dams with heights less than or equal to 15 feet, across the United States. These structures were originally constructed for various purposes, including water supply, navigation, recreation, power generation, and irrigation. Many low-head dams also serve as popular recreational sites.
+</p>
+
+<p>
+However, the flow conditions immediately downstream of these dams can become highly transient and exhibit complex three-dimensional behavior, especially during high-flow seasons. These conditions can be extremely hazardous for recreational users, including swimmers, boaters, kayakers, anglers, and other river users.
+</p>
+
+<p>
+During such conditions, a hydraulic jump often forms downstream of the dam. This jump can become submerged when the tailwater depth exceeds the sequent depth of the jump. This phenomenon, commonly referred to as a submerged hydraulic jump or reverse roller, is characterized by significant air entrainment caused by the impinging nappe.
+</p>
+
+
+<p>
+The resulting flow region can have significantly reduced buoyancy, making it extremely hazardous. Floating objects, including human bodies, can become trapped in the recirculating currents and may be unable to escape without external assistance. Numerous incidents involving swimmers, boaters, kayakers, and anglers have been reported in submerged rollers downstream of low-head dams.
+</p>
+
+<figure>
+  <img src="images/lhd.png" alt="Formation of submerged jump/reverse roller near a low-head dam">
+  <figcaption>
+    <strong>Figure 1.</strong> Formation of a submerged jump/reverse roller near the toe of a low-head dam.
+  </figcaption>
+</figure>
+
+<p>
+Understanding the flow conditions under which a reverse roller forms, and how the flow transitions from a free jump to a partially submerged or fully submerged hydraulic jump, is essential for hazard assessment and mitigation.
+</p>
+
+<figure>
+  <img src="images/alljump.png" alt="All four stages of flow downstream of low head dams (Tschantz and Wright, (2010))">
+  <figcaption>
+    <strong>Figure 2.</strong> All four stages of flow downstream of low head dams (Tschantz and Wright, (2010)).
+  </figcaption>
+</figure>
+
+<figure>
+  <img src="images/jumpparameter.png" alt="Parameters of hydraulic jump for prediction of submerged jump or reverse roller downstream of low head dam (Caleb et al., 2024)">
+  <figcaption>
+    <strong>Figure 3.</strong> Parameters of hydraulic jump for prediction of submerged jump or reverse roller downstream of low head dam (Caleb et al., 2024)
+  </figcaption>
+</figure>
+
+<p>
+There are specific ranges of tailwater depth that can lead to the formation of a reverse roller or submerged hydraulic jump. The range between the conjugate depth, <em>y<sub>2</sub></em>, and the flip depth, <em>y<sub>flip</sub></em>, is particularly hazardous:
+</p>
+
+<p>
+<em>y<sub>flip</sub> &gt; y<sub>t</sub> &gt; y<sub>2</sub></em>
+</p>
+
+<p>
+Within this range, the tailwater depth can create a strong reverse roller capable of trapping floating objects or recreational users. Although physical hydraulic modeling in laboratory settings can be used to study these phenomena, such experiments are often expensive, time-consuming, and difficult to scale to field conditions.
+</p>
+
+
+
+<p>
+This online toolbox provides a step-by-step training module for setting up, running, and interpreting a FLOW-3D HYDRO computational fluid dynamics model for low-head dam reverse-roller and drowning-potential assessment.
+</p>
+
+
+<hr>
+
+<h2>Toolbox Sections</h2>
+
+<ul>
+  <li>Tool Summary</li>
+  <li>What Is Needed</li>
+  <li>Data and Model Setup</li>
+  <li>Summary of Results</li>
+  <li>Step-by-Step FLOW-3D Walkthrough</li>
+  <li>Downloadable Files</li>
+</ul>
+
+<hr>
+
+<h3>Motivation</h3>
+
+<p>
+Recent advances in three-dimensional CFD modeling allow modelers to analyze reverse-roller hydraulics and, when needed, evaluate floating-body behavior using human-prototype or simplified floating-body representations. This type of modeling can support the assessment of drowning potential and can also be used to evaluate structural modifications intended to reduce reverse-roller strength.
+</p>
+
+<p>
+FLOW-3D outputs also provide intuitive visualizations that can help communicate hydraulic hazards to first responders, dam owners, government officials, and the public. While several commercial and open-source CFD tools are available for hydraulic-structure modeling, FLOW-3D is widely used because it provides robust free-surface and multiphase-flow modeling capabilities for complex hydraulic conditions.
+</p>
+
+<p>
+A CFD toolbox can assist dam owners and stakeholders in identifying reverse-roller hazards and evaluating mitigation alternatives. A straightforward CFD workflow allows users to assess low-head dam drowning potential in ways that are not possible using only one-dimensional or two-dimensional hydraulic models.
+</p>
+
+<p>
+The toolbox can also be used to analyze structural modifications such as sills, baffle blocks, and other features that may be placed on the downstream apron or stilling floor to reduce hazardous reverse-roller behavior.
+</p>
+
+
+<hr>
+
+<h2>What This Toolbox Does</h2>
+
+<p>
+This toolbox helps users learn how to:
+</p>
+
+<ul>
+  <li>Prepare geometry and terrain/bathymetry data.</li>
+  <li>Define the computational domain and mesh blocks.</li>
+  <li>Set fluid properties and initial conditions.</li>
+  <li>Select physics options such as turbulence and air-entrainment models.</li>
+  <li>Set the general moving-object model, if floating-body simulation is required.</li>
+  <li>Apply inflow, outflow, wall, and symmetry boundary conditions.</li>
+  <li>Run a FLOW-3D simulation.</li>
+  <li>Extract results such as velocity, water-surface elevation, pressure, turbulence, and hydraulic-roller behavior.</li>
+  <li>Calibrate and validate results using site data or laboratory data, when available.</li>
+  <li>Run models for different discharge ranges.</li>
+  <li>Link modeled flow ranges to probability of exceedance and structural rating-curve information.</li>
+  <li>Prepare figures, tables, and animations for reporting and communication.</li>
+</ul>

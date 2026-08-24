@@ -1,0 +1,781 @@
+<h1>Data and Model Setup</h1>
+
+
+
+<h2>Example Description</h2>
+
+
+
+<p>
+
+This training example demonstrates a FLOW-3D CFD modeling workflow for evaluating hazardous hydraulic conditions at a low-head dam. The example focuses on identifying reverse-roller behavior, high-velocity zones, free-surface response, and flow patterns relevant to drowning-potential assessment. The work flow chart is shown below (Fig-4).
+
+</p>
+
+<figure>
+  <img src="images/flowchart.png" alt="Toolbox working flow chart">
+  <figcaption>
+    <strong>Figure 4.</strong> Toolbox working flow chart.
+  </figcaption>
+</figure>
+
+
+<hr>
+
+
+
+<h2>Geometry Preparation</h2>
+
+
+
+<p>
+
+The first step is to prepare the hydraulic-structure geometry and verify that the model dimensions are suitable for FLOW-3D simulation.
+
+</p>
+
+
+
+<ul>
+
+&#x20; <li>Obtain detailed weir/low head dam dimensions from as-built drawings, design blueprints, or site surveys.</li>
+
+&#x20; <li>Identify key parameters such as crest shape, crest length, structure height, slopes, steps, piers, abutments, and venting systems.</li>
+
+</ul>
+
+
+
+<p>
+
+Before importing the geometry into FLOW-3D, check the following:
+
+</p>
+
+
+
+<ul>
+
+&#x20; <li>Confirm that the geometry uses the correct unit system.</li>
+
+&#x20; <li>Confirm that the geometry scale is correct.</li>
+
+&#x20; <li>Confirm that the upstream and downstream directions are correctly oriented.</li>
+
+&#x20; <li>Check whether the structure and channel surfaces are properly represented.</li>
+
+&#x20; <li>Check whether the geometry has gaps, overlaps, or unrealistic features.</li>
+
+&#x20; <li>Simplify unnecessary details that may increase computation time without improving hydraulic interpretation.</li>
+
+</ul>
+
+
+
+<hr>
+
+
+
+<h2>Bathymetry and Terrain Preparation</h2>
+
+
+
+<p>
+
+Bathymetry and terrain data are required to represent the upstream and downstream channel geometry around the low-head dam.
+
+</p>
+
+
+
+<ul>
+
+&#x20; <li>Conduct a bathymetric survey of the upstream and downstream channel to capture channel-bed topography and flow parameters such as discharge, velocity, and depth.</li>
+
+&#x20; <li>Use ADCP for bathymetric survey and LiDAR for overall terrain representation(Fig-5).</li>
+
+&#x20; <li>Use a high-resolution DEM for hydraulic simulation where detailed terrain representation is required.</li>
+
+&#x20; <li>Survey channel banks and surrounding terrain to define computational boundaries and capture the natural topography of the channel.</li>
+
+&#x20; <li>Take two cross sections immediately upstream and downstream of the low-head dam, and additional cross sections farther upstream and downstream as needed.</li>
+
+&#x20; <li>Determine cross-section spacing based on channel-bank irregularity, bed variability, sudden bed changes, and the upstream/downstream boundary-condition requirements for CFD modeling.</li>
+
+</ul>
+
+<figure>
+  <img src="images/Lidarimage.png" alt="LiDAR Survey for riverbank and water surface terrain at low head dam, Jordan river, Utah">
+  <figcaption>
+    <strong>Figure 5.</strong> LiDAR Survey for riverbank and water surface terrain at low head dam, Jordan river, Utah.
+  </figcaption>
+</figure>
+
+
+<p>
+
+If bathymetry, DEM, or cross-section data are included, the terrain should be prepared before creating the FLOW-3D model.
+
+</p>
+
+
+
+<h3>Processing LiDAR DEM in ArcGIS Pro for FLOW-3D</h3>
+
+
+
+<p>
+
+Check the LiDAR DEM resolution and coordinate system before processing. The DEM should be added to ArcGIS Pro or GIS software, and bathymetric-survey cross sections should be added as GIS layers on top of the DEM. The following workflow can be used to prepare the final DEM for FLOW-3D simulation:
+
+</p>
+
+
+
+<ul>
+
+&#x20; <li>Convert cross-section point data to point shapefiles.</li>
+
+&#x20; <li>Create a TIN using all point shapefiles.</li>
+
+&#x20; <li>Create a channel mask polygon.</li>
+
+&#x20; <li>Use Extract by Mask to isolate the required channel area.</li>
+
+&#x20; <li>Mosaic the processed terrain to a new raster.</li>
+
+&#x20; <li>Export the final raster as an ASCII file.</li>
+
+</ul>
+
+
+
+<h3>Terrain Processing Checks</h3>
+
+
+
+<ul>
+
+&#x20; <li>Confirm horizontal and vertical units.</li>
+
+&#x20; <li>Convert elevations to the unit system used in FLOW-3D.</li>
+
+&#x20; <li>Remove obvious survey errors or unrealistic bed elevations.</li>
+
+&#x20; <li>Interpolate between surveyed cross sections if needed.</li>
+
+&#x20; <li>Clip or mask the terrain to the modeling domain.</li>
+
+&#x20; <li>Export the terrain or bed surface in a format compatible with the geometry workflow.</li>
+
+</ul>
+
+<figure>
+  <img src="images/lidardem.png" alt="Final Corrected DEM by LiDAR survey at low head dam, Jordan River, Utah">
+  <figcaption>
+    <strong>Figure 6.</strong> Final Corrected DEM by LiDAR survey at low head dam, Jordan River, Utah.
+  </figcaption>
+</figure>
+
+
+<hr>
+
+
+
+<h2>Create Stereolithography File (.STL) for FLOW-3D Simulation</h2>
+
+
+
+<p>
+
+Prepare a three-dimensional solid model of the weir geometry using AutoCAD, Civil 3D, SketchUp, or equivalent CAD software. The geometry should be prepared at the correct scale and should include relevant structural features such as the weir crest, side walls, training walls, and stilling basin.
+
+</p>
+
+
+
+<p>
+
+Similarly, generate the terrain surface using DEM or surveyed topographic data. Once both the weir and terrain models are complete, convert them to stereolithography format using CAD software or equivalent tools to ensure compatibility with FLOW-3D. Before exporting, confirm that the geometry is watertight and free of gaps or overlaps (Fig-7).
+
+</p>
+
+<figure>
+  <img src="images/stldem.png" alt="Uploaded ASCII file of DEM and low head dam geometry in FLOW-3D showing all cross-sections too.">
+  <figcaption>
+    <strong>Figure 7.</strong> Uploaded ASCII file of DEM and low head dam geometry in FLOW-3D showing all cross-sections too.
+  </figcaption>
+</figure>
+
+
+<h3>Coordinate-System Alignment for FLOW-3D</h3>
+
+
+
+<p>
+
+Note: While preparing the solid geometry for FLOW-3D in CAD software, ensure that the User Coordinate System is aligned with the FLOW-3D coordinate convention and that the unit of the prepared geometry matches the unit system selected in FLOW-3D.
+
+</p>
+
+
+
+<ul>
+
+&#x20; <li><strong>Z-axis:</strong> Upward vertical direction.</li>
+
+&#x20; <li><strong>X-axis:</strong> Flow direction or longitudinal direction.</li>
+
+&#x20; <li><strong>Y-axis:</strong> Channel width or lateral direction.</li>
+
+</ul>
+
+
+
+<p>
+
+This alignment matches the FLOW-3D coordinate system and helps ensure correct geometry orientation during import.
+
+</p>
+
+
+
+<p>
+
+After preparing the geometry, import the STL file or files into FLOW-3D and assign appropriate geometry types, such as subcomponent, solid region, or fluid-region boundary, depending on the modeling requirement(Fig-8 & Fig-9).
+
+</p>
+
+<figure>
+  <img src="images/flow3dgui.png" alt="Geometry tab opened in FLOW-3D interface, prepared for importing or creating the 3D model of the hydraulic structure.">
+  <figcaption>
+    <strong>Figure 8.</strong> Geometry tab opened in FLOW-3D interface, prepared for importing or creating the 3D model of the hydraulic structure.
+  </figcaption>
+</figure>
+
+<figure>
+  <img src="images/geomstl.png" alt="Imported ogee spillway geometry with floating body upstream of low head dam into FLOW-3D as an STL file and mesh block">
+  <figcaption>
+    <strong>Figure 9.</strong> Imported ogee spillway geometry with floating body upstream of low head dam into FLOW-3D as an STL file and mesh block.
+  </figcaption>
+</figure>
+<hr>
+
+
+
+<h2>Assign Floating or Moving Object Properties</h2>
+
+
+
+<p>
+
+If the simulation includes a trapped floating body or moving object, assign the required moving-object properties in FLOW-3D.
+
+</p>
+
+
+
+<h3>Coefficient of Restitution</h3>
+
+
+
+<p>
+
+The coefficient of restitution describes how an object rebounds after collision.
+
+</p>
+
+
+
+<pre><code>Coefficient of restitution = Vr(after collision) / Vr(before collision)
+
+</code></pre>
+
+
+
+<ul>
+
+&#x20; <li><strong>e = 1:</strong> Perfectly elastic collision.</li>
+
+&#x20; <li><strong>e = 0:</strong> Perfectly inelastic collision, where bodies stick together.</li>
+
+</ul>
+
+
+
+<p>
+
+This parameter is used to model how objects rebound during collision.
+
+</p>
+
+
+
+<h3>Coefficient of Friction</h3>
+
+
+
+<p>
+
+The coefficient of friction represents resistance to sliding motion between contacting surfaces.
+
+</p>
+
+<figure>
+  <img src="images/coupled.png" alt="Assigning moving object properties ">
+  <figcaption>
+    <strong>Figure 10.</strong> Assigning moving object properties .
+  </figcaption>
+</figure>
+
+
+<figure>
+  <img src="images/movingobject.png" alt="Moving object setup ">
+  <figcaption>
+    <strong>Figure 11.</strong> Moving object setup
+  </figcaption>
+</figure>
+
+
+
+<hr>
+
+
+
+<h2>Computational Domain</h2>
+
+
+
+<p>
+
+The computational domain should include the major hydraulic regions required to capture the low-head dam flow behavior.
+
+</p>
+
+<figure>
+  <img src="images/geomstl.png" alt="Computational domain">
+  <figcaption>
+    <strong>Figure 12.</strong> Compuational domain.
+  </figcaption>
+</figure>
+
+
+<ul>
+
+&#x20; <li>Sufficient upstream length for inflow development.</li>
+
+&#x20; <li>The dam crest or hydraulic-structure region.</li>
+
+&#x20; <li>The downstream apron or stilling-floor region.</li>
+
+&#x20; <li>Sufficient downstream length to capture the reverse roller and recovery zone.</li>
+
+&#x20; <li>Adequate vertical clearance above the expected water surface.</li>
+
+</ul>
+
+
+
+<hr>
+
+
+
+<h2>Mesh Setup</h2>
+
+
+
+<p>
+
+Mesh refinement should be concentrated in regions where important hydraulic features occur.
+
+</p>
+
+
+
+<ul>
+
+&#x20; <li>The dam or weir crest.</li>
+
+&#x20; <li>The nappe or overflow region.</li>
+
+&#x20; <li>The toe of the structure.</li>
+
+&#x20; <li>The reverse-roller region.</li>
+
+&#x20; <li>The downstream recirculation and energy-dissipation zone.</li>
+
+&#x20; <li>Any floating-body or moving-object region, if included.</li>
+
+</ul>
+
+
+
+<p>
+
+A coarser mesh can be used farther from the hydraulic structure to reduce computational cost. Multiple mesh-refinement strategies, such as mesh blocks, mesh planes, and nested mesh blocks, can be used to refine important local regions(Fig-13-15) .
+
+</p>
+
+<figure>
+  <img src="images/containingmesh.png" alt="A containing mesh block covering the full length and height, with a very small width, is used for 2D simulation">
+  <figcaption>
+    <strong>Figure 13.</strong> A containing mesh block covering the full length and height, with a very small width, is used for 2D simulation.
+  </figcaption>
+</figure>
+
+<figure>
+  <img src="images/nestedmesh.png" alt="Two additional mesh planes near crest and toe of the dam">
+  <figcaption>
+    <strong>Figure 14.</strong> Two additional mesh planes near crest and toe of the dam.
+  </figcaption>
+</figure>
+
+<figure>
+  <img src="images/nestedblc.png" alt="One nested block mesh of green of finer mesh size near the weir geometry where accurate simulation of flow behavior is required.">
+  <figcaption>
+    <strong>Figure 15.</strong> One nested block mesh of green of finer mesh size near the weir geometry where accurate simulation of flow behavior is required.
+  </figcaption>
+</figure>
+
+
+<hr>
+
+
+
+<h2>Boundary Conditions and Initial Conditions</h2>
+
+
+
+<p>
+
+Boundary conditions are the known hydraulic conditions, such as flow depth, discharge, velocity, or pressure, that allow the discretized forms of the governing flow equations to be solved at each grid node. In FLOW-3D, upstream boundary conditions can be defined by specifying flow depth, velocity, discharge, or pressure, depending on the channel geometry and flow uniformity.
+
+</p>
+
+
+
+<p>
+
+For the downstream boundary, a flow depth or pressure boundary condition is typically assigned to allow the model to compute backwater effects and maintain numerical stability, especially under subcritical flow conditions.
+
+</p>
+
+<figure>
+  <img src="images/Bc.png" alt="Boundary condition for mesh block has been assigned.">
+  <figcaption>
+    <strong>Figure 16.</strong> Boundary condition for mesh block has been assigned.
+  </figcaption>
+</figure>
+
+
+<h3>Boundary Conditions for the Containing Mesh Block</h3>
+
+
+
+<ul>
+
+&#x20; <li><strong>Inflow:</strong> Specify velocity components, volume flow rate, or pressure. If pressure is used, it is assigned as stagnation pressure with fluid elevation or fluid height.</li>
+
+&#x20; <li><strong>Outflow:</strong> Specify zero gradient, pressure, or elevation.</li>
+
+&#x20; <li><strong>Wall:</strong> Y-minimum and Y-maximum boundaries are often automatically set as symmetry boundaries for closed domains. If wall shear stress is neglected, assigning symmetry can be appropriate.</li>
+
+&#x20; <li><strong>Bottom boundary:</strong> Assign the Z-minimum boundary as a wall to represent the bed or structural surface.</li>
+
+&#x20; <li><strong>Top boundary:</strong> Assign the Z-maximum boundary as stagnation pressure with fluid fraction equal to zero.</li>
+
+</ul>
+
+
+
+<p>
+
+<strong>Note:</strong> For nested mesh blocks, symmetry boundary conditions are typically applied to all boundaries.
+
+</p>
+
+<figure>
+  <img src="images/symbc.png" alt="symmetry boundary condition for nested block 2.">
+  <figcaption>
+    <strong>Figure 17.</strong> symmetry boundary condition for nested block 2.
+  </figcaption>
+</figure>
+
+
+<h3>Initial Conditions</h3>
+
+
+
+<p>
+
+For the initial conditions, the upstream water level can be set up to the weir crest elevation. For the global initial condition, the tailwater depth is specified to represent downstream flow conditions.
+
+</p>
+
+<figure>
+  <img src="images/globalinitial.png" alt="Global Initial conditions assigned.">
+  <figcaption>
+    <strong>Figure 18.</strong> Global Initial conditions assigned.
+  </figcaption>
+</figure>
+
+
+<figure>
+  <img src="images/initialflo.png" alt="Initial upstream flow depth has been assigned.">
+  <figcaption>
+    <strong>Figure 19.</strong> Initial upstream flow depth has been assigned.
+  </figcaption>
+</figure>
+
+
+
+<h3>Typical Boundary Conditions</h3>
+
+
+
+<table>
+
+&#x20; <thead>
+
+&#x20;   <tr>
+
+&#x20;     <th>Boundary</th>
+
+&#x20;     <th>Typical Condition</th>
+
+&#x20;     <th>Notes</th>
+
+&#x20;   </tr>
+
+&#x20; </thead>
+
+&#x20; <tbody>
+
+&#x20;   <tr>
+
+&#x20;     <td>Upstream</td>
+
+&#x20;     <td>Flow rate, velocity, or pressure boundary</td>
+
+&#x20;     <td>Based on measured or design discharge</td>
+
+&#x20;   </tr>
+
+&#x20;   <tr>
+
+&#x20;     <td>Downstream</td>
+
+&#x20;     <td>Tailwater depth, pressure outlet, or rating curve</td>
+
+&#x20;     <td>Should represent downstream hydraulic control</td>
+
+&#x20;   </tr>
+
+&#x20;   <tr>
+
+&#x20;     <td>Bottom</td>
+
+&#x20;     <td>Wall boundary</td>
+
+&#x20;     <td>Represents bed and structural surfaces</td>
+
+&#x20;   </tr>
+
+&#x20;   <tr>
+
+&#x20;     <td>Side walls</td>
+
+&#x20;     <td>Wall or symmetry boundary</td>
+
+&#x20;     <td>Depends on channel/domain representation</td>
+
+&#x20;   </tr>
+
+&#x20;   <tr>
+
+&#x20;     <td>Top</td>
+
+&#x20;     <td>Atmospheric/free-surface condition</td>
+
+&#x20;     <td>Allows free-surface flow development</td>
+
+&#x20;   </tr>
+
+&#x20; </tbody>
+
+</table>
+
+
+
+<hr>
+
+
+
+<h2>Assigning Fluid Types and Their Properties</h2>
+
+
+
+<p>
+
+Assign the fluid as water using the FLOW-3D material library. Confirm the fluid density, viscosity, and other material properties before running the simulation.
+
+</p>
+
+
+
+<hr>
+
+
+
+<h2>Global Settings</h2>
+
+
+
+<p>
+
+Global settings include the unit system, temperature, reference pressure, file details, and the start and end time of the simulation. The simulation end time should be selected so that the desired flow condition becomes fully developed.
+
+</p>
+
+
+
+<hr>
+
+
+
+<h2>Physics</h2>
+
+
+
+<p>
+
+In the physics settings, assign the gravity component in the vertical direction. For SI units, the Z-direction gravity component is typically assigned as:
+
+</p>
+
+
+
+<pre><code>g\_z = -9.81 m/s²
+
+</code></pre>
+
+
+
+<p>
+
+For viscosity and turbulence, the Renormalized Group turbulence model can be selected to account for turbulent fluid motion. Wall shear stress calculations may also be activated to account for shear stress developed at boundary surfaces.
+
+</p>
+
+
+
+<p>
+
+If simulating a trapped floating body, the moving-object model should be activated, and the collision model can also be enabled.
+
+</p>
+
+
+
+<hr>
+
+
+
+<h2>Output Variables</h2>
+
+
+
+<p>
+
+Select output variables based on the objectives of the simulation. Typical output variables may include:
+
+</p>
+
+
+
+<ul>
+
+&#x20; <li>Velocity magnitude and velocity components.</li>
+
+&#x20; <li>Water-surface elevation.</li>
+
+&#x20; <li>Pressure distribution.</li>
+
+&#x20; <li>Turbulence quantities.</li>
+
+&#x20; <li>Vorticity or recirculation indicators.</li>
+
+&#x20; <li>Fluid fraction.</li>
+
+&#x20; <li>Forces on moving or floating objects, if applicable.</li>
+
+</ul>
+
+
+
+<hr>
+
+
+
+<h2>Solver Settings and Numerics</h2>
+
+
+
+<p>
+
+Solver settings and numerical controls can initially be kept at default values. These settings may be adjusted later if numerical instability, convergence issues, or excessive runtime occurs.
+
+</p>
+
+
+
+<hr>
+
+
+
+<h2>FAVOR Method</h2>
+
+
+
+<p>
+
+In FLOW-3D, FAVOR\&trade; means <strong>Fractional Area/Volume Obstacle Representation</strong>.
+
+</p>
+
+
+
+<p>
+
+FAVOR is used to represent solid geometry inside the computational mesh without requiring the mesh to exactly follow the shape of the object.
+
+</p>
+
+
+
+<h3>What FAVOR Does</h3>
+
+
+
+<p>
+
+FAVOR calculates how much of each mesh cell is occupied by solid geometry and how much remains open for fluid flow. This allows FLOW-3D to represent complex hydraulic structures using structured mesh cells.
+
+</p>
+
+
+
+<hr>
+
+
+
+<h2>Running the Simulation</h2>
+
+
+
+<p>
+
+After geometry, mesh, boundary conditions, initial conditions, physics, and output variables are defined, run the simulation. During the run, monitor time step, volume error, free-surface behavior, and solver stability. If the simulation becomes unstable, review the mesh resolution, initial conditions, boundary conditions, and time-step controls.
+
+</p>
+

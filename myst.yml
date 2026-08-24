@@ -19,3 +19,5 @@ project:
 
 site:
   template: book-theme
+  options:
+    base_url: /flow3d-low-head-dam-toolbox/
