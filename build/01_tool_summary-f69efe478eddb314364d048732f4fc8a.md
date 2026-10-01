@@ -1,6 +1,6 @@
-<h1>Tool Summary</h1>
+<h1>What is the toolbox?</h1>
 
-<h2>Objective and Scope</h2>
+<h2>What can CFD modeling do?</h2>
 
 <p>
 This toolbox demonstrates how FLOW-3D can be used to set up, run, and interpret a three-dimensional CFD model for low-head dam reverse-roller and drowning-potential assessment.
