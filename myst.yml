@@ -16,6 +16,7 @@ project:
     - file: 06_downloadable_files.md
     - file: 08_toolbox_learning_sequences.md
     - file: 09_version_information.md
+    - file: 10_test.md
 
 site:
   template: book-theme
