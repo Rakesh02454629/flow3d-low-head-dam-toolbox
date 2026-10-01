@@ -28,9 +28,9 @@
 
 &#x20;   <tr>
 
-&#x20;     <td>Toolbox development & acknowledgement </td>
+&#x20;     <td>Author</td>
 
-&#x20;     <td>Rakesh Kumar Chaudhary and Brian M. Crookston</td>
+&#x20;     <td>Rakesh Kumar Chaudhary and Brian Crookston</td>
 
 &#x20;   </tr>
 
@@ -38,7 +38,7 @@
 
 &#x20;     <td>Institution</td>
 
-&#x20;     <td>Utah State University</td>
+&#x20;     <td>Utah Water Research Laboratory | Utah State University</td>
 
 &#x20;   </tr>
 
