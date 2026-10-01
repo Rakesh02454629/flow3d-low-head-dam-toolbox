@@ -1,0 +1,1 @@
+import{c as e}from"/flow3d-low-head-dam-toolbox//build/_shared/chunk-RAQ24GF6.js";var n=e((l,t)=>{function a(i){return{name:"Plain text",aliases:["text","txt"],disableAutodetect:!0}}t.exports=a});export default n();
