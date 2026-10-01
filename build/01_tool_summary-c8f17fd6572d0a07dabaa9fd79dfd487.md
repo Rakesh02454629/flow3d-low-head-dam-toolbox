@@ -1,4 +1,4 @@
-<h1>What is the toolbox?</h1>
+<h1>What is the Toolbox?</h1>
 
 <h2>What can CFD modeling do?</h2>
 
