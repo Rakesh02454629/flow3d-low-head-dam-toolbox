@@ -1,6 +1,4 @@
-<h1>Tool Summary</h1>
-
-<h2>Objective and Scope</h2>
+<h1>What is the Toolbox?</h1>
 
 <p>
 This toolbox demonstrates how FLOW-3D can be used to set up, run, and interpret a three-dimensional CFD model for low-head dam reverse-roller and drowning-potential assessment.
@@ -9,7 +7,6 @@ This toolbox demonstrates how FLOW-3D can be used to set up, run, and interpret 
 <p>
 This manual toolbox discusses the step-by-step process for simulating flow at low-head dams under different scenarios. It includes analysis of different discharge and head ranges for which a reverse roller forms, along with drowning potential, flow characteristics, discharge, water-surface profile, and velocity distribution.
 </p>
-
 <p>
 The current example focuses on:
 </p>
@@ -22,7 +19,9 @@ The current example focuses on:
   <li>Identification of high-velocity zones, recirculation zones, and hydraulic conditions that may contribute to public-safety risk</li>
 </ul>
 
-<h2>Motivation</h2>
+<h2>What can CFD modeling do?</h2>
+
+</h2>
 
 <p>
 Three-dimensional CFD modeling can help analyze reverse-roller hydraulics and evaluate potential mitigation alternatives at low-head dams.

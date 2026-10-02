@@ -1,21 +1,28 @@
 version: 1
 project:
-  title: FLOW-3D CFD Toolbox for Low-Head Dam Hazard Analysis
-  authors:
-    
+  title: CFD Toolbox for Low-Head Dams
+  
   toc:
     - file: intro.md
-    - file: 01_tool_summary.md
-    - file: 02_what_is_needed.md
-    - file: 03_folder_organization.md
-    - file: 03_Recommended_naming_practice.md
-    - file: 04_data_model_setup.md
-    - file: 05_validation.md
-    - file: 06_summary_results.md
-    - file: 05_flow3d_walkthrough.md
-    - file: 06_downloadable_files.md
-    - file: 08_toolbox_learning_sequences.md
-    - file: 09_version_information.md
+    - file: 01_What_is_the_toolbox.md
+    - file: 02_what_can_CFD_modeling_do.md
+    - file: 03_Recommended_Learning_Sequence.md
+    - file: 04_Toolbox_creation.md
+    - file: 05_Toolbox_for_each_audience.md
+    - file: 06_What_is_a_low-head_dam_and_reverse_roller.md
+    - file: 07_CFD_Model-What_is_needed.md
+    - file: 08_Obtaining_Field_Data.md
+    - file: 09_Model_Organization.md
+    - file: 10_Model_Setup_and_work_flow.md
+    - file: 11_Model_Calibration.md
+    - file: 12_Model_Sensitivity_Analysis.md
+    - file: 13_Model_Results.md
+    - file: 14_Model_Results_Uncertainty.md
+    - file: 15_Toolbox_Examples.md
+    - file: 16_Flow3D_Walkthrough.md
+    - file: 17_Downloadable_files.md
+    - file: 18_Additional_Resources.md
+    - file: 19_version_information.md
 
 site:
   template: book-theme
