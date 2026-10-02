@@ -5,25 +5,49 @@
     <loc>http://localhost:3000</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/tool-summary</loc>
+    <loc>http://localhost:3000/what-is-the-toolbox</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/what-is-needed</loc>
+    <loc>http://localhost:3000/what-can-cfd-modeling-do</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/folder-organization</loc>
+    <loc>http://localhost:3000/recommended-learning-sequence</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/recommended-naming-practice</loc>
+    <loc>http://localhost:3000/toolbox-creation</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/data-model-setup</loc>
+    <loc>http://localhost:3000/toolbox-for-each-audience</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/validation</loc>
+    <loc>http://localhost:3000/what-is-a-low-head-dam-and-reverse-roller</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/summary-results</loc>
+    <loc>http://localhost:3000/cfd-model-what-is-needed</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/obtaining-field-data</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/model-organization</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/model-setup-and-work-flow</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/model-calibration</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/model-sensitivity-analysis</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/model-results</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/model-results-uncertainty</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/toolbox-examples</loc>
   </url>
   <url>
     <loc>http://localhost:3000/flow3d-walkthrough</loc>
@@ -32,7 +56,7 @@
     <loc>http://localhost:3000/downloadable-files</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/toolbox-learning-sequences</loc>
+    <loc>http://localhost:3000/additional-resources</loc>
   </url>
   <url>
     <loc>http://localhost:3000/version-information</loc>
