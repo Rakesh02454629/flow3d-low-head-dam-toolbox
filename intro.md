@@ -1,4 +1,4 @@
-<h1>FLOW-3D CFD Toolbox for Low-Head Dam Hazard Analysis</h1>
+<h1>CFD Toolbox for Low-Head Dam Hazard Analysis</h1>
 
 <h2>Introduction</h2>
 
