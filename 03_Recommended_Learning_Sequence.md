@@ -1,36 +1,31 @@
-<h1>Recommended Naming Practice</h1>
+<h1>Recommended Learning Sequences </h1>
 
 <p>
-Use short, clear folder and file names without spaces. This helps avoid broken links, file-path errors, and rendering problems in HydroShare, GitHub Pages, and Jupyter Book.
+
+Users should complete the toolbox in this order:
+
 </p>
 
-<h2>Recommended Examples</h2>
 
-<pre><code>lhd.png
-04_Boundary_Conditions/inflow_tailwater_summary.xlsx
-06_Results/velocity_contour_Q1.png
-</code></pre>
 
-<h2>Good Naming Rules</h2>
+<ol>
 
-<ul>
-  <li>Use short and descriptive file names.</li>
-  <li>Avoid spaces in file and folder names.</li>
-  <li>Use underscores instead of spaces.</li>
-  <li>Use lowercase names when possible.</li>
-  <li>Keep file extensions clear, such as <code>.png</code>, <code>.jpg</code>, <code>.xlsx</code>, <code>.csv</code>, or <code>.ipynb</code>.</li>
-</ul>
+&#x20; <li>Read the <strong>Tool Summary</strong>.</li>
 
-<h2>Examples to Avoid</h2>
+&#x20; <li>Review the software and data requirements.</li>
 
-<pre><code>velocity contour final image 1.png
-Flow 3D Results File.xlsx
-Low Head Dam Figure Updated Version.png
-</code></pre>
+&#x20; <li>Download the input data and model files.</li>
 
-<h2>Better Alternatives</h2>
+&#x20; <li>Open the FLOW-3D model.</li>
 
-<pre><code>velocity_contour_Q1.png
-flow3d_results.xlsx
-low_head_dam_figure.png
-</code></pre>
+&#x20; <li>Follow the step-by-step walkthrough.</li>
+
+&#x20; <li>Run or review the simulation.</li>
+
+&#x20; <li>Post-process the results.</li>
+
+&#x20; <li>Compare results with the example outputs.</li>
+
+&#x20; <li>Use the workflow to test additional flow ranges or structural modifications.</li>
+
+</ol>
