@@ -65,16 +65,6 @@ This online toolbox provides a step-by-step training module for setting up, runn
 
 <hr>
 
-<h2>Toolbox Sections</h2>
-
-<ul>
-  <li>Tool Summary</li>
-  <li>What Is Needed</li>
-  <li>Data and Model Setup</li>
-  <li>Summary of Results</li>
-  <li>Step-by-Step FLOW-3D Walkthrough</li>
-  <li>Downloadable Files</li>
-</ul>
 
 <hr>
 
