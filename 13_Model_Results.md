@@ -1,4 +1,4 @@
-<h2>6. Model Results </h2>
+<h2> Model Results </h2>
 
 <p>
 The CFD Toolbox for Low-Head Dam Hazard Analysis enables users to generate, analyze, and interpret hydraulic simulation results to identify hazardous flow conditions, particularly reverse rollers and submerged hydraulic jumps. These results support hydraulic hazard assessment, dam safety evaluation, and the development of appropriate mitigation measures.
