@@ -1,7 +1,5 @@
 <h1> What is Low head dam and Reverse Roller? </h1>
 
-<h2>Introduction</h2>
-
 <p>
 There are thousands of low-head dams, generally defined as dams with heights less than or equal to 15 feet, across the United States. These structures were originally constructed for various purposes, including water supply, navigation, recreation, power generation, and irrigation. Many low-head dams also serve as popular recreational sites.
 </p>
