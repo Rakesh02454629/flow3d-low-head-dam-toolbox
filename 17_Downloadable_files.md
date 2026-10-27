@@ -4,7 +4,14 @@
 The following folders and supporting files are included in the HydroShare resource to help users set up, run, analyze, and interpret FLOW-3D simulations for low-head dam hydraulic hazard assessment. These resources provide the necessary input data, geometry, simulation files, boundary conditions, modeling instructions, and example results for investigating reverse roller formation and associated hydraulic hazards.
 </p>
 
-<h3>[Available Files and Resources](http://www.hydroshare.org/resource/5cc5b3b397d1414da5a68b9c1e5be4f2)</h3>
+<h3>[Available Files and Resources]
+  <p>
+<strong>Download CFD Toolbox Resources:</strong>
+<a href="https://www.hydroshare.org/resource/5cc5b3b397d1414da5a68b9c1e5be4f2/"
+   target="_blank" rel="noopener noreferrer">
+   Access and Download Files from HydroShare
+</a>
+</p>
 
 <table>
 <thead>
